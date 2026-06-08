@@ -1,0 +1,175 @@
+html, body, pre, code, kbd, samp {
+  font-family: "Press Start 2P", monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #f5f5f5;
+  color: #212529;
+  line-height: 1.8;
+  font-size: 12px;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+/* ── 8-BIT ANIMATIONS ── */
+
+@keyframes pixel-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-cursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes nes-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+@keyframes step-fade-in {
+  0% { opacity: 0; transform: translateY(8px); }
+  25% { opacity: 0.33; }
+  50% { opacity: 0.66; }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pixel-slide-left {
+  0% { opacity: 0; transform: translateX(-16px); }
+  33% { opacity: 0.5; transform: translateX(-8px); }
+  66% { opacity: 0.75; transform: translateX(-4px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pixel-slide-right {
+  0% { opacity: 0; transform: translateX(16px); }
+  33% { opacity: 0.5; transform: translateX(8px); }
+  66% { opacity: 0.75; transform: translateX(4px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* ── UTILITY CLASSES ── */
+
+.animate-bounce {
+  animation: pixel-bounce 0.6s steps(3) infinite;
+}
+
+.animate-blink {
+  animation: nes-blink 1s steps(2) infinite;
+}
+
+.animate-step {
+  animation: step-fade-in 0.8s steps(4) both;
+}
+
+.animate-slide-left {
+  animation: pixel-slide-left 0.6s steps(3) both;
+}
+
+.animate-slide-right {
+  animation: pixel-slide-right 0.6s steps(3) both;
+}
+
+.animate-float {
+  animation: float 2s steps(6) infinite;
+}
+
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+.delay-6 { animation-delay: 0.6s; }
+
+/* ── LAYOUT ── */
+
+.wrap {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+}
+
+/* ── SECTION SPACING ── */
+
+.section {
+  padding: 3rem 0;
+}
+
+.section-divider {
+  border: none;
+  border-top: 4px dashed #d4d4d4;
+  margin: 0;
+}
+
+/* ── NES.CSS OVERRIDES ── */
+
+.nes-container {
+  margin-bottom: 1.5rem;
+}
+
+.nes-btn {
+  font-size: 10px;
+  cursor: pointer;
+  transition: transform 0.1s steps(2);
+}
+
+.nes-btn:hover {
+  transform: translateY(-2px);
+}
+
+.nes-btn:active {
+  transform: translateY(0);
+}
+
+.nes-badge {
+  font-size: 8px;
+}
+
+/* ── RESPONSIVE ── */
+
+@media (max-width: 640px) {
+  body {
+    font-size: 10px;
+  }
+
+  .wrap {
+    padding: 0 1rem 3rem;
+  }
+
+  .section {
+    padding: 2rem 0;
+  }
+
+  .nes-btn {
+    font-size: 8px;
+    padding: 4px 8px;
+  }
+
+  .hero-title {
+    font-size: 14px !important;
+    line-height: 2 !important;
+  }
+}
